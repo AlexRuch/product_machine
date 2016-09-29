@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <meta charset="utf-8"/>
+    <title>Coffee Machine</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<h:body>
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.xhtml">Coffee Machine</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="index.xhtml">Home</a></li>
+                <li><a href="#">Bag</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="jumbotorn">
+        <div class="container">
+            <div class="row text-center">
+                <h2>COFFEE MACHINE</h2>
+                <h3>We brew the best coffee</h3>
+                <a class="btn btn-primary" href="user/index.xhtml">Take it!</a>
+            </div>
+        </div>
+    </section>
+    <section class="container">
+        <div class="row">
+            <figure class="col-sm-12">
+                <h:form>
+                    <h:inputText value="#{work_with_users.user_email}" placeholder="E-mail"/>
+                    <br/>
+                    <h:inputSecret value="#{work_with_users.user_password}" placeholder="Password"/>
+                    <br/>
+                    <h:commandButton value="Submit!" action="#{work_with_users.registration()}"/>
+                </h:form>
+            </figure>
+        </div>
+    </section>
+    <footer class="container-fluid">
+        <p>2016 Coffee machine</p>
+    </footer>
+</h:body>
+</html>

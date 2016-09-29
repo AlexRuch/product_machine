@@ -1,0 +1,10 @@
+if(ordered_products_list.contains(product){
+   for(Ordered_products ordered_product: ordered_products_list){
+      if(orderd_product.equals(product){
+         ordered_product.setProduct_quantity(ordered_product.getProduct_quantity() + 1);
+      }
+   }
+}
+else{
+   ordered_products_list.add(product);
+}

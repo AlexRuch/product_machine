@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+    <meta charset="utf-8"/>
+    <title>Coffee Machine</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'/>
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<h:body>
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/PRODUCT_MACHINE-1.0-SNAPSHOT/index.xhtml">Coffee Machine</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="/PRODUCT_MACHINE-1.0-SNAPSHOT/index.xhtml">Home</a></li>
+                <li><a href="#">Bag</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="container">
+        <form method="POST" action="j_security_check" id="registration">
+            <h:panelGrid id="panel" columns="1" border="0" cellpadding="4" cellspacing="4" style="margin: 200px auto auto;">
+                <h:outputLabel for="j_username" value="Username:" />
+                <input type="text" name="j_username"/>
+                <h:outputLabel for="j_password" value="Password:" />
+                <input type="password" name="j_password"/>
+                <h:panelGroup>
+                    <input type="submit" value="Login"/>
+                    <a href="/PRODUCT_MACHINE-1.0-SNAPSHOT/registration.xhtml" style="margin-left: 10px">Registration</a>
+                </h:panelGroup>
+            </h:panelGrid>
+        </form>
+    </section>
+    <footer style="height: 100px;
+    background-color: #cfcfcf;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;">
+        <p style="
+        padding-top: 50px;
+        text-align: center;">
+            2016 Coffee machine</p>
+    </footer>
+</h:body>
+</html>

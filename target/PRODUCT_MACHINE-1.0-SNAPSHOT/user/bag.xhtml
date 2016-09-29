@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+    <meta charset="utf-8"/>
+    <title>Coffee Machine</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+</head>
+<h:body>
+    <h:form>
+        <f:view>
+            <nav class="navbar navbar-inverse" style="margin-bottom: 0">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.xhtml">Product Machine</a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="index.xhtml">Home</a></li>
+                        <li class="active"><a href="bag.xhtml">Bag</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><h:commandLink value="Log out" action="#{login.logout()}"> <span
+                                class="glyphicon glyphicon-log-in"></span></h:commandLink></li>
+                    </ul>
+                </div>
+            </nav>
+            <section class="container">
+                <h:dataTable value="#{work_with_order.ordered_products}" var="product_in_order"
+                             styleClass="table table-striped" style="text-align: left">
+                    <h:column>
+                        <f:facet name="header">Product name</f:facet>
+                        #{product_in_order.product_name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Product price</f:facet>
+                        #{product_in_order.product_cost}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Product price</f:facet>
+                        #{product_in_order.product_cost}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Remove</f:facet>
+                        <h:commandButton styleClass="btn btn-danger" value="Cancel" action="#{work_with_order.delete_product_in_bag(product_in_order)}"/>
+                    </h:column>
+                </h:dataTable>
+            </section>
+        </f:view>
+        <footer style="height: 100px;
+    background-color: #cfcfcf;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;">
+            <p style="
+        padding-top: 50px;
+        text-align: center;">
+                2016 Coffee machine</p>
+        </footer>
+    </h:form>
+</h:body>
+</html>
