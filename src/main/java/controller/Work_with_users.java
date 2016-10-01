@@ -25,7 +25,7 @@ public class Work_with_users {
     Interaction_users_db interaction_users_db;
     Users_db users_db;
     public String registration(){
-        if(interaction_users_db.check_user(user_email) == null){
+        if(interaction_users_db.check_user(user_email).isEmpty()){
         users_db = new Users_db();
         users_db.setUser_email(user_email);
         users_db.setUser_password(user_password);
@@ -44,6 +44,15 @@ public class Work_with_users {
     /*
     ------------------------------GETTERS AND SETTERS------------------------------
      */
+
+    public String getRegistration_result_text() {
+        return registration_result_text;
+    }
+
+    public void setRegistration_result_text(String registration_result_text) {
+        this.registration_result_text = registration_result_text;
+    }
+
     public String getUser_email() {
         return user_email;
     }

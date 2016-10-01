@@ -5,6 +5,11 @@
              version="2.1">
     <persistence-unit name="product_machine" transaction-type="JTA">
         <jta-data-source>java:/product_machine</jta-data-source>
+        <class>model.Products_db</class>
+        <class>model.Account_info_db</class>
+        <class>model.Ordered_products_db</class>
+        <class>model.User_order_db</class>
+        <class>model.Users_db</class>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>

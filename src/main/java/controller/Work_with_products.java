@@ -25,20 +25,10 @@ public class Work_with_products {
     Interaction_products_db interaction_products_db;
 
     public List<Products_db> list_of_products() {
-        all_products = new ArrayList<>();
-        interaction_products_db = new Interaction_products_db();
-        all_products = interaction_products_db.all_products();
-        return all_products;
+        return interaction_products_db.all_products();
     }
 /*
 ------------------------------GETTERS AND SETTERS------------------------------
 */
 
-    public List<Products_db> getAll_products() {
-        return all_products;
-    }
-
-    public void setAll_products(List<Products_db> all_products) {
-        this.all_products = all_products;
-    }
 }
