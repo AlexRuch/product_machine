@@ -16,10 +16,7 @@ import java.util.List;
 @RequestScoped
 public class Work_with_products {
     public Work_with_products() {
-
     }
-
-    private List<Products_db> all_products;
 
     @EJB
     Interaction_products_db interaction_products_db;

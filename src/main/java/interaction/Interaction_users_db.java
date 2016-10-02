@@ -3,6 +3,7 @@ package interaction;
 
 import model.Users_db;
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
@@ -25,5 +26,9 @@ public class Interaction_users_db {
         List <Users_db> user = new ArrayList<>();
         user = entityManager.createQuery("select u from users_db u where u.user_email = ?1", Users_db.class).setParameter(1, user_email).getResultList();
         return user;
+    }
+
+    public Users_db current_user(){
+        return entityManager.createQuery("select u from users_db u where u.user_email = ?1", Users_db.class).setParameter(1, FacesContext.getCurrentInstance().getExternalContext().getRemoteUser()).getResultList().get(0);
     }
 }

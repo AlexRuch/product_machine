@@ -8,6 +8,7 @@ import model.Users_db;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 
 /**
  * Created by ralex on 30.06.16.
@@ -39,8 +40,6 @@ public class Work_with_users {
         }
         return "registration_result";
     }
-
-
     /*
     ------------------------------GETTERS AND SETTERS------------------------------
      */

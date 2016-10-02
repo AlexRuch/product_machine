@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by ralex on 30.06.16.
@@ -24,8 +25,20 @@ public class Users_db {
     @Column
     private double user_account;
 
+    @OneToMany(mappedBy = "user_db")
+    private List<User_order_db> order_db_list;
+
+
     public int getId() {
         return id;
+    }
+
+    public List<User_order_db> getOrder_db_list() {
+        return order_db_list;
+    }
+
+    public void setOrder_db_list(List<User_order_db> order_db_list) {
+        this.order_db_list = order_db_list;
     }
 
     public String getUser_email() {

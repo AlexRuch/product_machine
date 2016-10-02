@@ -2,6 +2,7 @@ package controller;
 
 import interaction.Interaction_order_products_db;
 import interaction.Interaction_products_db;
+import interaction.Interaction_users_db;
 import model.Ordered_products_db;
 import model.Products_db;
 
@@ -40,7 +41,7 @@ public class Work_with_order {
         ordered_products.remove(product);
     }
 
-    public String confirm_order_in_bag() throws HeuristicRollbackException, RollbackException, HeuristicMixedException, SystemException, NotSupportedException {
+    public String confirm_order_in_bag(){
         for (Products_db product : ordered_products) {
             if (map_products.containsKey(product.getId())) {
                 int quantity = map_products.get(product.getId()) + 1;

@@ -25,6 +25,7 @@ public class Products_db {
     @OneToMany(mappedBy = "products_db")
     private List<Ordered_products_db> ordered_products_db_list;
 
+
     public int getId() {
         return id;
     }

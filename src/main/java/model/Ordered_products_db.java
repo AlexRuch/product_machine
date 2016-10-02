@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by ralex on 03.07.16.
@@ -19,8 +20,21 @@ public class Ordered_products_db {
     @Column
     private int product_quantity;
 
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private User_order_db order_db;
+
+
     public int getId() {
         return id;
+    }
+
+    public User_order_db getOrder_db() {
+        return order_db;
+    }
+
+    public void setOrder_db(User_order_db order_db) {
+        this.order_db = order_db;
     }
 
     public Products_db getProducts_db() {

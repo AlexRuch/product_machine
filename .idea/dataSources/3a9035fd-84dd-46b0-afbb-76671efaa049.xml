@@ -10,8 +10,8 @@
     <schema id="3" parent="1" name="public">
       <object-id>2200</object-id>
       <visible>1</visible>
-      <introspection-state-number>704</introspection-state-number>
-      <introspection-timestamp>2016-09-17.23:39:23.510</introspection-timestamp>
+      <introspection-state-number>769</introspection-state-number>
+      <introspection-timestamp>2016-10-03.00:05:29.309</introspection-timestamp>
     </schema>
     <schema id="4" parent="1" name="pg_catalog">
       <object-id>11</object-id>
@@ -36,174 +36,167 @@
       <object-id>16386</object-id>
       <state-number>685</state-number>
     </table>
-    <table id="11" parent="3" name="news_db">
-      <object-id>16391</object-id>
-      <state-number>686</state-number>
+    <table id="11" parent="3" name="ordered_products_db">
+      <object-id>16483</object-id>
+      <state-number>768</state-number>
     </table>
-    <table id="12" parent="3" name="ordered_products_db">
-      <object-id>16430</object-id>
-      <state-number>704</state-number>
-    </table>
-    <table id="13" parent="3" name="products_db">
+    <table id="12" parent="3" name="products_db">
       <object-id>16404</object-id>
-      <state-number>704</state-number>
+      <state-number>768</state-number>
     </table>
-    <table id="14" parent="3" name="user_order_db">
-      <object-id>16409</object-id>
-      <state-number>689</state-number>
+    <table id="13" parent="3" name="user_order_db">
+      <object-id>16488</object-id>
+      <state-number>769</state-number>
     </table>
-    <table id="15" parent="3" name="users_db">
+    <table id="14" parent="3" name="users_db">
       <object-id>16414</object-id>
-      <state-number>690</state-number>
+      <state-number>769</state-number>
     </table>
-    <column id="16" parent="10" name="id">
+    <column id="15" parent="10" name="id">
       <state-number>685</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <index id="17" parent="10" name="account_info_db_pkey">
+    <index id="16" parent="10" name="account_info_db_pkey">
       <object-id>16389</object-id>
       <columns>id</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <key id="18" parent="10" name="account_info_db_pkey">
+    <key id="17" parent="10" name="account_info_db_pkey">
       <object-id>16390</object-id>
       <columns>id</columns>
       <underlying-index>account_info_db_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="19" parent="11" name="id">
-      <state-number>686</state-number>
+    <column id="18" parent="11" name="id">
+      <state-number>765</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <column id="20" parent="11" name="post_text">
-      <state-number>686</state-number>
-      <data-type>varchar(255)|0</data-type>
+    <column id="19" parent="11" name="product_quantity">
+      <state-number>765</state-number>
+      <data-type>integer|0</data-type>
     </column>
-    <column id="21" parent="11" name="post_title">
-      <state-number>686</state-number>
-      <data-type>varchar(255)|0</data-type>
+    <column id="20" parent="11" name="order_id">
+      <state-number>765</state-number>
+      <data-type>integer|0</data-type>
     </column>
-    <index id="22" parent="11" name="news_db_pkey">
-      <object-id>16397</object-id>
+    <column id="21" parent="11" name="product_id">
+      <state-number>765</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="22" parent="11" name="ordered_products_db_pkey">
+      <object-id>16486</object-id>
       <columns>id</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <key id="23" parent="11" name="news_db_pkey">
-      <object-id>16398</object-id>
-      <columns>id</columns>
-      <underlying-index>news_db_pkey</underlying-index>
-      <primary>1</primary>
-    </key>
-    <column id="24" parent="12" name="id">
-      <state-number>703</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-    </column>
-    <column id="25" parent="12" name="product_quantity">
-      <state-number>703</state-number>
-      <data-type>integer|0</data-type>
-    </column>
-    <column id="26" parent="12" name="product_id">
-      <state-number>703</state-number>
-      <data-type>integer|0</data-type>
-    </column>
-    <index id="27" parent="12" name="ordered_products_db_pkey">
-      <object-id>16433</object-id>
-      <columns>id</columns>
-      <desc-columns />
-      <unique>1</unique>
-    </index>
-    <key id="28" parent="12" name="ordered_products_db_pkey">
-      <object-id>16434</object-id>
+    <key id="23" parent="11" name="ordered_products_db_pkey">
+      <object-id>16487</object-id>
       <columns>id</columns>
       <underlying-index>ordered_products_db_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <foreign-key id="29" parent="12" name="fkh1f21pgvbdodvw73vhnj8famo">
-      <object-id>16435</object-id>
+    <foreign-key id="24" parent="11" name="fk68nxjjo90wo9u7j2li069jtev">
+      <object-id>16493</object-id>
+      <columns>order_id</columns>
+      <ref-key>~.user_order_db.user_order_db_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="25" parent="11" name="fkh1f21pgvbdodvw73vhnj8famo">
+      <object-id>16498</object-id>
       <columns>product_id</columns>
       <ref-key>~.products_db.products_db_pkey</ref-key>
       <cascade-update-rule>restrict</cascade-update-rule>
       <cascade-delete-rule>restrict</cascade-delete-rule>
     </foreign-key>
-    <column id="30" parent="13" name="id">
+    <column id="26" parent="12" name="id">
       <state-number>688</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <column id="31" parent="13" name="product_cost">
+    <column id="27" parent="12" name="product_cost">
       <state-number>688</state-number>
       <data-type>real|0</data-type>
     </column>
-    <column id="32" parent="13" name="product_name">
+    <column id="28" parent="12" name="product_name">
       <state-number>688</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="33" parent="13" name="product_quantity">
+    <column id="29" parent="12" name="product_quantity">
       <state-number>688</state-number>
       <data-type>real|0</data-type>
     </column>
-    <index id="34" parent="13" name="products_db_pkey">
+    <index id="30" parent="12" name="products_db_pkey">
       <object-id>16407</object-id>
       <columns>id</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <key id="35" parent="13" name="products_db_pkey">
+    <key id="31" parent="12" name="products_db_pkey">
       <object-id>16408</object-id>
       <columns>id</columns>
       <underlying-index>products_db_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="36" parent="14" name="id">
-      <state-number>689</state-number>
+    <column id="32" parent="13" name="id">
+      <state-number>766</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <index id="37" parent="14" name="user_order_db_pkey">
-      <object-id>16412</object-id>
+    <column id="33" parent="13" name="user_id">
+      <state-number>766</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="34" parent="13" name="user_order_db_pkey">
+      <object-id>16491</object-id>
       <columns>id</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <key id="38" parent="14" name="user_order_db_pkey">
-      <object-id>16413</object-id>
+    <key id="35" parent="13" name="user_order_db_pkey">
+      <object-id>16492</object-id>
       <columns>id</columns>
       <underlying-index>user_order_db_pkey</underlying-index>
       <primary>1</primary>
     </key>
-    <column id="39" parent="15" name="id">
+    <foreign-key id="36" parent="13" name="fkg2vhukyny8cye8hos4p66h4s4">
+      <object-id>16503</object-id>
+      <columns>user_id</columns>
+      <ref-key>~.users_db.users_db_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="37" parent="14" name="id">
       <state-number>690</state-number>
       <mandatory>1</mandatory>
       <data-type>integer|0</data-type>
     </column>
-    <column id="40" parent="15" name="user_account">
+    <column id="38" parent="14" name="user_account">
       <state-number>690</state-number>
       <data-type>double precision|0</data-type>
     </column>
-    <column id="41" parent="15" name="user_email">
+    <column id="39" parent="14" name="user_email">
       <state-number>690</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="42" parent="15" name="user_password">
+    <column id="40" parent="14" name="user_password">
       <state-number>690</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <column id="43" parent="15" name="user_role">
+    <column id="41" parent="14" name="user_role">
       <state-number>690</state-number>
       <data-type>varchar(255)|0</data-type>
     </column>
-    <index id="44" parent="15" name="users_db_pkey">
+    <index id="42" parent="14" name="users_db_pkey">
       <object-id>16420</object-id>
       <columns>id</columns>
       <desc-columns />
       <unique>1</unique>
     </index>
-    <key id="45" parent="15" name="users_db_pkey">
+    <key id="43" parent="14" name="users_db_pkey">
       <object-id>16421</object-id>
       <columns>id</columns>
       <underlying-index>users_db_pkey</underlying-index>
