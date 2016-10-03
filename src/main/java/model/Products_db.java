@@ -25,6 +25,10 @@ public class Products_db {
     @OneToMany(mappedBy = "products_db")
     private List<Ordered_products_db> ordered_products_db_list;
 
+    @Column
+    private String product_image;
+
+
 
     public int getId() {
         return id;
@@ -60,5 +64,13 @@ public class Products_db {
 
     public void setOrdered_products_db_list(List<Ordered_products_db> ordered_products_db_list) {
         this.ordered_products_db_list = ordered_products_db_list;
+    }
+
+    public String getProduct_image() {
+        return product_image;
+    }
+
+    public void setProduct_image(String product_image) {
+        this.product_image = product_image;
     }
 }

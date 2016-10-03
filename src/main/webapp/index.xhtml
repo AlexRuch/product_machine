@@ -27,7 +27,7 @@
         <section class="jumbotorn">
             <div class="container">
                 <div class="row text-center">
-                    <h2>PRODUCT MACHINE</h2>
+                    <h2>PRODUCT&#xA0;MACHINE</h2>
                     <h3>Best products here!</h3>
                     <a class="btn btn-primary" href="user/index.xhtml">Take it!</a>
                 </div>
@@ -41,7 +41,7 @@
                             <li>
                                 <div >
                                     <h4>#{product.product_name}</h4>
-                                    <img src="css/images/index.png"
+                                    <img src="#{product.product_image}"
                                          alt="coffee" width="120"/>
                                     <h4>#{product.product_cost}</h4>
                                 </div>
@@ -53,8 +53,8 @@
         </section>
 
     </f:view>
-    <footer class="container-fluid">
-        <p>2016 Product machine</p>
+    <footer>
+            <p>2016 Coffee machine</p>
     </footer>
 </h:body>
 </html>

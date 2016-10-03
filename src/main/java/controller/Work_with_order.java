@@ -51,6 +51,7 @@ public class Work_with_order {
             }
         }
         interaction_order_products_db.confirm_order(map_products);
+        ordered_products.clear();
         return "bag";
     }
 
