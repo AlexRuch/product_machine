@@ -32,6 +32,7 @@ public class Work_with_order {
     Interaction_order_products_db interaction_order_products_db;
     private List<Products_db> ordered_products = new ArrayList<>();
     private Map<Integer, Integer> map_products = new HashMap<>();
+    private float order_sum = 0;
 
     public void add_product_in_bag(Products_db product) {
         ordered_products.add(product);
@@ -49,10 +50,18 @@ public class Work_with_order {
             } else {
                 map_products.put(product.getId(), 1);
             }
+            order_sum = order_sum + product.getProduct_cost();
         }
-        interaction_order_products_db.confirm_order(map_products);
-        ordered_products.clear();
-        return "bag";
+
+        if(interaction_order_products_db.check_order(map_products, order_sum)){
+            interaction_order_products_db.confirm_order(map_products, order_sum);
+            order_sum = 0;
+            ordered_products.clear();
+            return "index";
+        }
+        else {
+            return "bag";
+        }
     }
 
         /*

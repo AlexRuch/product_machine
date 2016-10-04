@@ -17,6 +17,7 @@ import java.util.List;
 public class Interaction_products_db {
 
     public Interaction_products_db() {
+
     }
 
     @PersistenceContext(unitName = "product_machine")

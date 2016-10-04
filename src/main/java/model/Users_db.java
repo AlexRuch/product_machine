@@ -23,7 +23,10 @@ public class Users_db {
     private String user_role;
 
     @Column
-    private double user_account;
+    private float user_money;
+
+    @OneToOne(mappedBy = "user")
+    private Account_info_db account;
 
     @OneToMany(mappedBy = "user_db")
     private List<User_order_db> order_db_list;
@@ -31,6 +34,14 @@ public class Users_db {
 
     public int getId() {
         return id;
+    }
+
+    public float getUser_money() {
+        return user_money;
+    }
+
+    public void setUser_money(float user_money) {
+        this.user_money = user_money;
     }
 
     public List<User_order_db> getOrder_db_list() {
@@ -65,11 +76,12 @@ public class Users_db {
         this.user_role = user_role;
     }
 
-    public double getUser_account() {
-        return user_account;
+    public Account_info_db getAccount() {
+        return account;
     }
 
-    public void setUser_account(double user_account) {
-        this.user_account = user_account;
+    public void setAccount(Account_info_db account) {
+        this.account = account;
     }
+
 }

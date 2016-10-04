@@ -30,7 +30,7 @@ public class Work_with_users {
         users_db = new Users_db();
         users_db.setUser_email(user_email);
         users_db.setUser_password(user_password);
-        users_db.setUser_account(0.0);
+        users_db.setUser_money(0);
         users_db.setUser_role("user");
         interaction_users_db.createUser(users_db);
             registration_result_text = "Success! \n Now sign in and <a href = \"user/index.xhtml\">buy</a> something!";

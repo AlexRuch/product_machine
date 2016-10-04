@@ -1,6 +1,7 @@
 package model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,6 +21,15 @@ public class User_order_db {
     @OneToMany(mappedBy = "order_db")
     private List<Ordered_products_db> ordered_products_db;
 
+    @Column
+    private Date order_date;
+
+    @Column
+    private float order_sum;
+
+    @OneToOne(mappedBy = "order")
+    Account_info_db account_info_db;
+
     public int getId() {
         return id;
     }
@@ -32,11 +42,35 @@ public class User_order_db {
         this.ordered_products_db = ordered_products_db;
     }
 
+    public Account_info_db getAccount_info_db() {
+        return account_info_db;
+    }
+
+    public void setAccount_info_db(Account_info_db account_info_db) {
+        this.account_info_db = account_info_db;
+    }
+
     public Users_db getUser_db() {
         return user_db;
     }
 
     public void setUser_db(Users_db user_db) {
         this.user_db = user_db;
+    }
+
+    public Date getOrder_date() {
+        return order_date;
+    }
+
+    public void setOrder_date(Date order_date) {
+        this.order_date = order_date;
+    }
+
+    public float getOrder_sum() {
+        return order_sum;
+    }
+
+    public void setOrder_sum(float order_sum) {
+        this.order_sum = order_sum;
     }
 }
