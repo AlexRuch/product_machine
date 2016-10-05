@@ -24,8 +24,6 @@ public class Interaction_products_db {
     private EntityManager entityManager;
 
     public List<Products_db> all_products() {
-        List<Products_db> all_products = new ArrayList<>();
-        all_products = entityManager.createQuery("select p from products_db p", Products_db.class).getResultList();
-        return all_products;
+        return entityManager.createQuery("select p from products_db p", Products_db.class).getResultList();
     }
 }

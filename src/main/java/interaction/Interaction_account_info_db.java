@@ -1,5 +1,6 @@
 package interaction;
 
+import model.Account_info_db;
 import model.Users_db;
 
 import javax.ejb.EJB;
@@ -13,9 +14,6 @@ import java.util.Date;
  */
 @Stateless
 public class Interaction_account_info_db {
-    public  Interaction_account_info_db(){
-
-    }
 
     @EJB
     Interaction_users_db interaction_users_db;
@@ -25,9 +23,14 @@ public class Interaction_account_info_db {
 
     private Date date = new Date();
 
+
     public void add_money(float money_sum){
         Users_db user = interaction_users_db.current_user();
-        user.getAccount().setTransaction_sum(money_sum);
-        user.getAccount().setTransaction_date(date);
+        Account_info_db account = new Account_info_db();
+        account.setTransaction_date(date);
+        account.setTransaction_sum(money_sum);
+        entityManager.persist(account);
+        user.getAccount().add(account);
+        entityManager.persist(user);
     }
 }

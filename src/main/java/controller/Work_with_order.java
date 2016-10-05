@@ -43,6 +43,7 @@ public class Work_with_order {
     }
 
     public String confirm_order_in_bag(){
+
         for (Products_db product : ordered_products) {
             if (map_products.containsKey(product.getId())) {
                 int quantity = map_products.get(product.getId()) + 1;
@@ -57,6 +58,7 @@ public class Work_with_order {
             interaction_order_products_db.confirm_order(map_products, order_sum);
             order_sum = 0;
             ordered_products.clear();
+            map_products.clear();
             return "index";
         }
         else {

@@ -31,9 +31,10 @@ public class Interaction_order_products_db {
 
     private List<Ordered_products_db> ordered_products_db_list = new ArrayList<>();
 
-    private Date date = new Date();
+    private Date date;
 
     public void confirm_order(Map<Integer, Integer> ordered_products_db_map, float order_sum) {
+        date = new Date();
         Account_info_db account_info_db = new Account_info_db();
         Ordered_products_db ordered_product;
         User_order_db user_order_db = new User_order_db();
@@ -47,6 +48,7 @@ public class Interaction_order_products_db {
             ordered_product.setProduct_quantity((Integer) entry.getValue());
             ordered_product.setOrder_db(user_order_db);
             products_db.setProduct_quantity(products_db.getProduct_quantity() - (Integer) entry.getValue());
+            ordered_product.setTotal_cost(products_db.getProduct_cost() * (Integer) entry.getValue());
             entityManager.persist(products_db);
             entityManager.persist(ordered_product);
             ordered_products_db_list.add(ordered_product);
@@ -66,8 +68,11 @@ public class Interaction_order_products_db {
         account_info_db.setTransaction_sum(order_sum);
         account_info_db.setOrder(user_order_db);
         entityManager.persist(account_info_db);
+        user_db.getAccount().add(account_info_db);
+        entityManager.persist(user_db);
 
         ordered_products_db_list.clear();
+
     }
 
     public boolean check_order(Map<Integer, Integer> ordered_products_db_map, float order_sum){
@@ -93,5 +98,9 @@ public class Interaction_order_products_db {
         }
 
         return product_status && money_status;
+    }
+
+    public List<Ordered_products_db> getOrder(User_order_db order){
+        return entityManager.createQuery("select o from ordered_products_db o where o.order_db = ?1", Ordered_products_db.class).setParameter(1, order).getResultList();
     }
 }

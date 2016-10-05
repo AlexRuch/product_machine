@@ -13,7 +13,7 @@ public class Account_info_db {
     @GeneratedValue
     private int id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "user_id")
     private Users_db user;
 

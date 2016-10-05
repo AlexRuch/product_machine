@@ -24,6 +24,9 @@ public class Ordered_products_db {
     @JoinColumn(name = "order_id")
     private User_order_db order_db;
 
+    @Column
+    private float total_cost;
+
 
     public int getId() {
         return id;
@@ -53,5 +56,11 @@ public class Ordered_products_db {
         this.product_quantity = product_quantity;
     }
 
+    public float getTotal_cost() {
+        return total_cost;
+    }
 
+    public void setTotal_cost(float total_cost) {
+        this.total_cost = total_cost;
+    }
 }

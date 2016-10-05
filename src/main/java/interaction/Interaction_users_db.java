@@ -23,9 +23,7 @@ public class Interaction_users_db {
     }
 
     public List<Users_db> check_user(String user_email){
-        List <Users_db> user = new ArrayList<>();
-        user = entityManager.createQuery("select u from users_db u where u.user_email = ?1", Users_db.class).setParameter(1, user_email).getResultList();
-        return user;
+        return entityManager.createQuery("select u from users_db u where u.user_email = ?1", Users_db.class).setParameter(1, user_email).getResultList();
     }
 
     public Users_db current_user(){

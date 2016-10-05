@@ -28,7 +28,7 @@ public class User_order_db {
     private float order_sum;
 
     @OneToOne(mappedBy = "order")
-    Account_info_db account_info_db;
+    private Account_info_db account_info_db;
 
     public int getId() {
         return id;
