@@ -23,7 +23,8 @@
                         <li class="active"><a href="index.xhtml">Home</a></li>
                         <li><a href="bag.xhtml">Bag</a></li>
                         <li><a href="account.xhtml" onclick="#{work_with_account.all_user_orders()}">Account</a></li>
-                        <li><h:commandLink value="Log out" action="#{login.logout()}"> <span class="glyphicon glyphicon-log-in"></span></h:commandLink></li>
+                        <li><h:commandLink value="Log out" action="#{login.logout()}"> <span
+                                class="glyphicon glyphicon-log-in"></span></h:commandLink></li>
                     </ul>
                 </div>
             </nav>
@@ -32,14 +33,15 @@
                 <div class="catalog">
                     <ul>
                         <ui:repeat value="#{work_with_products.list_of_products()}" var="product">
-                            <li>
+                            <li class="item">
                                 <div>
                                     <h4>#{product.product_name}</h4>
                                     <img src="../#{product.product_image}"
                                          alt="product" width="120"/>
                                     <h4>#{product.product_cost}</h4>
-                                    <h:commandButton styleClass="btn btn-default" value="Add" action="#{work_with_order.add_product_in_bag(product)}">
-                                        <f:ajax execute="@form" render="@none" />
+                                    <h:commandButton styleClass="btn btn-default" value="Add"
+                                                     action="#{work_with_order.add_product_in_bag(product)}">
+                                        <f:ajax execute="@form" render="@none"/>
                                     </h:commandButton>
                                 </div>
                             </li>
@@ -50,7 +52,7 @@
             </section>
         </f:view>
         <footer>
-                <p>2016 Coffee machine</p>
+            <p>2016 Coffee machine</p>
         </footer>
     </h:form>
 </h:body>

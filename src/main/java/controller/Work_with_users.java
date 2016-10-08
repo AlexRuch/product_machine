@@ -1,7 +1,6 @@
 package controller;
 
 
-
 import interaction.Interaction_users_db;
 import model.Users_db;
 
@@ -16,7 +15,8 @@ import javax.faces.context.FacesContext;
 @ManagedBean
 @SessionScoped
 public class Work_with_users {
-    public Work_with_users(){}
+    public Work_with_users() {
+    }
 
     private String user_email;
     private String user_password;
@@ -25,17 +25,17 @@ public class Work_with_users {
     @EJB
     Interaction_users_db interaction_users_db;
     Users_db users_db;
-    public String registration(){
-        if(interaction_users_db.check_user(user_email).isEmpty()){
-        users_db = new Users_db();
-        users_db.setUser_email(user_email);
-        users_db.setUser_password(user_password);
-        users_db.setUser_money(0);
-        users_db.setUser_role("user");
-        interaction_users_db.createUser(users_db);
+
+    public String registration() {
+        if (interaction_users_db.check_user(user_email).isEmpty()) {
+            users_db = new Users_db();
+            users_db.setUser_email(user_email);
+            users_db.setUser_password(user_password);
+            users_db.setUser_money(0);
+            users_db.setUser_role("user");
+            interaction_users_db.createUser(users_db);
             registration_result_text = "Success! \n Now sign in and <a href = \"user/index.xhtml\">buy<a> something!";
-        }
-        else {
+        } else {
             registration_result_text = "Registration field. This e-mail already used! \n <a href=\"registration.xhtml>Try again!</a>";
         }
         return "registration_result";

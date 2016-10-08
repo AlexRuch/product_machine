@@ -32,7 +32,7 @@ public class Work_with_order {
     Interaction_order_products_db interaction_order_products_db;
     private List<Products_db> ordered_products = new ArrayList<>();
     private Map<Integer, Integer> map_products = new HashMap<>();
-    private float order_sum = 0;
+    private String order_result;
 
     public void add_product_in_bag(Products_db product) {
         ordered_products.add(product);
@@ -42,33 +42,49 @@ public class Work_with_order {
         ordered_products.remove(product);
     }
 
-    public String confirm_order_in_bag(){
+    public String confirm_order_in_bag(List<Products_db> products_in_bag) {
+        float order_sum = 0;
+        map_products.clear();
 
-        for (Products_db product : ordered_products) {
+        for (Products_db product : products_in_bag) {
             if (map_products.containsKey(product.getId())) {
-                int quantity = map_products.get(product.getId()) + 1;
-                map_products.put(product.getId(), quantity);
+                map_products.put(product.getId(), map_products.get(product.getId()) + 1);
             } else {
                 map_products.put(product.getId(), 1);
             }
             order_sum = order_sum + product.getProduct_cost();
         }
 
-        if(interaction_order_products_db.check_order(map_products, order_sum)){
-            interaction_order_products_db.confirm_order(map_products, order_sum);
-            order_sum = 0;
-            ordered_products.clear();
-            map_products.clear();
-            return "index";
+        if (!map_products.isEmpty()) {
+            if (interaction_order_products_db.check_order(map_products, order_sum)) {
+                interaction_order_products_db.confirm_order(map_products, order_sum);
+                ordered_products.clear();
+                products_in_bag.clear();
+                map_products.clear();
+                order_result = "Success!";
+                return "order_result.xhtml";
+            } else {
+                order_result = "Filed. You do not have enough money or we do not have enough products :)";
+                return "order_result.xhtml";
+            }
         }
         else {
-            return "bag";
+            return "bag.xhtml";
         }
+
     }
 
         /*
     ------------------------------GETTERS AND SETTERS------------------------------
      */
+
+    public String getOrder_result() {
+        return order_result;
+    }
+
+    public void setOrder_result(String order_result) {
+        this.order_result = order_result;
+    }
 
     public List<Products_db> getOrdered_products() {
         return ordered_products;

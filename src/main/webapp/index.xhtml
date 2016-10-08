@@ -38,13 +38,15 @@
                 <div class="catalog">
                     <ul>
                         <ui:repeat value="#{work_with_products.list_of_products()}" var="product">
-                            <li>
-                                <div >
-                                    <h4>#{product.product_name}</h4>
-                                    <img src="#{product.product_image}"
-                                         alt="coffee" width="120"/>
-                                    <h4>#{product.product_cost}</h4>
-                                </div>
+                            <li class="item">
+                                <a href="user/index.xhtml" style="text-decoration: none;">
+                                    <div>
+                                        <h4>#{product.product_name}</h4>
+                                        <img src="#{product.product_image}"
+                                             alt="coffee" width="120"/>
+                                        <h4>#{product.product_cost}</h4>
+                                    </div>
+                                </a>
                             </li>
                         </ui:repeat>
                     </ul>
@@ -54,7 +56,7 @@
 
     </f:view>
     <footer>
-            <p>2016 Coffee machine</p>
+        <p>2016 Coffee machine</p>
     </footer>
 </h:body>
 </html>

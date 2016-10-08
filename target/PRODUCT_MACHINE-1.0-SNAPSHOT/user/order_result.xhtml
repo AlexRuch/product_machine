@@ -29,28 +29,12 @@
                 <div class="row text-center">
                     <h2>PRODUCT&#xA0;MACHINE</h2>
                     <h3>Best products here!</h3>
-                    <a class="btn btn-primary" href="user/index.xhtml">Take it!</a>
                 </div>
             </div>
         </section>
         <section class="container">
             <h:form>
-                <div class="catalog">
-                    <ul>
-                        <ui:repeat value="#{work_with_products.list_of_products()}" var="product">
-                            <li class="item">
-                                <a href="user/index.xhtml" style="text-decoration: none;">
-                                    <div>
-                                        <h4>#{product.product_name}</h4>
-                                        <img src="#{product.product_image}"
-                                             alt="coffee" width="120"/>
-                                        <h4>#{product.product_cost}</h4>
-                                    </div>
-                                </a>
-                            </li>
-                        </ui:repeat>
-                    </ul>
-                </div>
+                #{work_with_order.order_result} <a href="bag.xhtml">Go to bag.</a> <a href="index.xhtml">Go homepage</a>
             </h:form>
         </section>
 

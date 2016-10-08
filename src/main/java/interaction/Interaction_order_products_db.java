@@ -31,10 +31,8 @@ public class Interaction_order_products_db {
 
     private List<Ordered_products_db> ordered_products_db_list = new ArrayList<>();
 
-    private Date date;
-
     public void confirm_order(Map<Integer, Integer> ordered_products_db_map, float order_sum) {
-        date = new Date();
+        Date date = new Date();
         Account_info_db account_info_db = new Account_info_db();
         Ordered_products_db ordered_product;
         User_order_db user_order_db = new User_order_db();
@@ -75,32 +73,23 @@ public class Interaction_order_products_db {
 
     }
 
-    public boolean check_order(Map<Integer, Integer> ordered_products_db_map, float order_sum){
-        boolean money_status;
-        boolean product_status = false;
+    public boolean check_order(Map<Integer, Integer> ordered_products_db_map, float order_sum) {
+        boolean money_status = true;
+        boolean current_product_status = true;
+        boolean product_status = true;
 
-        if(order_sum < interaction_users_db.current_user().getUser_money()){
-            money_status = true;
-        }
-        else {
-            money_status = false;
-        }
-        for (Map.Entry entry : ordered_products_db_map.entrySet()){
+        money_status = order_sum < interaction_users_db.current_user().getUser_money();
+
+        for (Map.Entry entry : ordered_products_db_map.entrySet()) {
             Products_db products_db = entityManager.find(Products_db.class, entry.getKey());
-            if ((Integer) entry.getValue() < products_db.getProduct_quantity()){
-                product_status = true;
-            }
-            else {
-                product_status = false;
-            }
-
-            product_status = product_status && product_status;
+            current_product_status = (Integer) entry.getValue() < products_db.getProduct_quantity();
+            product_status = product_status && current_product_status;
         }
 
         return product_status && money_status;
     }
 
-    public List<Ordered_products_db> getOrder(User_order_db order){
+    public List<Ordered_products_db> getOrder(User_order_db order) {
         return entityManager.createQuery("select o from ordered_products_db o where o.order_db = ?1", Ordered_products_db.class).setParameter(1, order).getResultList();
     }
 }
