@@ -50,6 +50,24 @@
                     </p:column>
                 </p:dataTable>
             </section>
+            <br/>
+            <section class="container">
+                <p:dataTable var="product" value="#{work_with_products.list_of_products()}" scrollable="true"
+                             scrollHeight="400">
+                    <p:column headerText="Product id">
+                        <h:outputText value="#{product.id}"/>
+                    </p:column>
+                    <p:column headerText="Product name">
+                        <h:outputText value="#{product.product_name}"/>
+                    </p:column>
+                    <p:column headerText="Product quantity">
+                        <h:outputText value="#{product.product_quantity}"/>
+                    </p:column>
+                    <p:column headerText="Add products">
+                        <h:commandButton value="Add" action="#{work_with_products.add_product(product)}"/>
+                    </p:column>
+                </p:dataTable>
+            </section>
         </h:form>
         <footer style="height: 100px;
     background-color: #cfcfcf;
