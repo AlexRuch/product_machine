@@ -42,10 +42,11 @@ public class Work_with_account {
     }
 
     public String order_info(User_order_db order) {
+        this.order = null;
         this.order = order;
         ordered_products_list.clear();
         ordered_products_list = interaction_order_products_db.getOrder(order);
-        return "order_info.xhtml";
+        return "../user/order_info.xhtml";
     }
 
 

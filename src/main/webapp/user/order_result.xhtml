@@ -8,7 +8,7 @@
     <meta charset="utf-8"/>
     <title>Coffee Machine</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'/>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
 </head>
 <h:body>
@@ -34,13 +34,21 @@
         </section>
         <section class="container">
             <h:form>
-                #{work_with_order.order_result} <a href="bag.xhtml">Go to bag.</a> <a href="index.xhtml">Go homepage</a>
+                <h2>#{work_with_order.order_result}</h2> <a href="bag.xhtml">Go to bag.</a> <a href="index.xhtml">Go homepage</a>
             </h:form>
         </section>
 
     </f:view>
-    <footer>
-        <p>2016 Coffee machine</p>
+    <footer style="height: 100px;
+    background-color: #cfcfcf;
+    margin-top: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;">
+        <p style="
+        padding-top: 50px;
+        text-align: center;">
+            2016 Coffee machine</p>
     </footer>
 </h:body>
 </html>
