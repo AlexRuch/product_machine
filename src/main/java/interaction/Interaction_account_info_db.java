@@ -1,13 +1,13 @@
 package interaction;
 
-import model.Account_info_db;
-import model.Users_db;
+        import model.Account_info_db;
+        import model.Users_db;
 
-import javax.ejb.EJB;
-import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.Date;
+        import javax.ejb.EJB;
+        import javax.ejb.Stateless;
+        import javax.persistence.EntityManager;
+        import javax.persistence.PersistenceContext;
+        import java.util.Date;
 
 /**
  * Created by ralex on 10/5/16.

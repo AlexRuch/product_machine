@@ -49,6 +49,18 @@ public class Work_with_account {
         return "../user/order_info.xhtml";
     }
 
+    public String addMoney100(){
+        interaction_users_db.addMoney100();
+        return "account";
+    }
+    public String addMoney500(){
+        interaction_users_db.addMoney500();
+        return "account";
+    }
+    public String addMoney1000(){
+        interaction_users_db.addMoney1000();
+        return "account";
+    }
 
 
      /*

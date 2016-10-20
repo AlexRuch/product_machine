@@ -31,8 +31,20 @@
             </nav>
 
         </f:view>
+
+
         <h:form>
             <section class="container">
+                My money: #{work_with_users.current_user().user_money}
+                <br/>
+
+                <h:commandButton value="Add 100" styleClass="btn btn-default"
+                                 action="#{work_with_account.addMoney100()}"/>
+                <h:commandButton value="Add 500" styleClass="btn btn-default"
+                                 action="#{work_with_account.addMoney500()}"/>
+                <h:commandButton value="Add 1000" styleClass="btn btn-default"
+                                 action="#{work_with_account.addMoney1000()}"/>
+
                 <p:dataTable var="order" value="#{work_with_account.user_order_list}" scrollable="true"
                              scrollHeight="400">
                     <p:column headerText="Order">
@@ -48,6 +60,8 @@
                         <a href="order_info.xhtml" onclick="#{work_with_account.order_info(order)}">More</a>
                     </p:column>
                 </p:dataTable>
+
+
             </section>
         </h:form>
         <footer style="height: 100px;

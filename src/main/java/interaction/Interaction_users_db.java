@@ -30,4 +30,22 @@ public class Interaction_users_db {
     public Users_db current_user() {
         return entityManager.createQuery("select u from users_db u where u.user_email = ?1", Users_db.class).setParameter(1, FacesContext.getCurrentInstance().getExternalContext().getRemoteUser()).getResultList().get(0);
     }
+
+    public void addMoney100(){
+        Users_db users_db = current_user();
+        users_db.setUser_money(users_db.getUser_money() + 100);
+        entityManager.persist(users_db);
+    }
+
+    public void addMoney500(){
+        Users_db users_db = current_user();
+        users_db.setUser_money(users_db.getUser_money() + 500);
+        entityManager.persist(users_db);
+    }
+
+    public void addMoney1000(){
+        Users_db users_db = current_user();
+        users_db.setUser_money(users_db.getUser_money() + 1000);
+        entityManager.persist(users_db);
+    }
 }

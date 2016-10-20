@@ -12,10 +12,10 @@
     <nav class="navbar navbar-inverse" style="margin-bottom: 0">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/PRODUCT_MACHINE-1.0-SNAPSHOT/index.xhtml">Coffee Machine</a>
+                <a class="navbar-brand" href="${pageContext.request.contextPath}/index.xhtml">Coffee Machine</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/PRODUCT_MACHINE-1.0-SNAPSHOT/index.xhtml">Home</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/index.xhtml">Home</a></li>
             </ul>
         </div>
     </nav>
@@ -29,7 +29,7 @@
                 <input type="password" name="j_password"/>
                 <h:panelGroup>
                     <input type="submit" value="Login"/>
-                    <a href="/PRODUCT_MACHINE-1.0-SNAPSHOT/registration.xhtml"
+                    <a href="${pageContext.request.contextPath}/registration.xhtml"
                        style="margin-left: 10px">Registration</a>
                 </h:panelGroup>
             </h:panelGrid>
