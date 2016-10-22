@@ -5,6 +5,7 @@ import model.*;
 import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.LockModeType;
 import javax.persistence.PersistenceContext;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -38,15 +39,17 @@ public class Interaction_order_products_db {
         User_order_db user_order_db = new User_order_db();
         Users_db user_db = interaction_users_db.current_user();
         user_order_db.setUser_db(user_db);
+
         entityManager.persist(user_order_db);
         for (Map.Entry entry : ordered_products_db_map.entrySet()) {
-            Products_db products_db = entityManager.find(Products_db.class, entry.getKey());
+            Products_db products_db = entityManager.find(Products_db.class, entry.getKey(), LockModeType.PESSIMISTIC_WRITE);
             ordered_product = new Ordered_products_db();
             ordered_product.setProducts_db(products_db);
             ordered_product.setProduct_quantity((Integer) entry.getValue());
             ordered_product.setOrder_db(user_order_db);
             products_db.setProduct_quantity(products_db.getProduct_quantity() - (Integer) entry.getValue());
             ordered_product.setTotal_cost(products_db.getProduct_cost() * (Integer) entry.getValue());
+
             entityManager.persist(products_db);
             entityManager.persist(ordered_product);
             ordered_products_db_list.add(ordered_product);
@@ -56,17 +59,25 @@ public class Interaction_order_products_db {
         user_order_db.setOrder_date(date);
         user_order_db.setOrder_sum(order_sum);
         user_order_db.setAccount_info_db(account_info_db);
+
+
         entityManager.persist(user_order_db);
         user_db.getOrder_db_list().add(user_order_db);
         user_db.setUser_money(user_db.getUser_money() - order_sum);
+
+
         entityManager.persist(user_db);
 
         account_info_db.setTransaction_date(date);
         account_info_db.setUser(user_db);
         account_info_db.setTransaction_sum(order_sum);
         account_info_db.setOrder(user_order_db);
+
+
         entityManager.persist(account_info_db);
         user_db.getAccount().add(account_info_db);
+
+
         entityManager.persist(user_db);
 
         ordered_products_db_list.clear();

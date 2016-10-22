@@ -22,8 +22,8 @@
                     </div>
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.xhtml">Home</a></li>
-                        <li class="active"><a href="bag.xhtml">Bag</a></li>
-                        <li><a href="#">Account</a></li>
+                        <li><a href="bag.xhtml">Bag</a></li>
+                        <li class="active"><a href="#">Account</a></li>
                         <li><h:commandLink value="Log out" action="#{login.logout()}"> <span
                                 class="glyphicon glyphicon-log-in"></span></h:commandLink></li>
                     </ul>
@@ -35,15 +35,16 @@
 
         <h:form>
             <section class="container">
-                My money: #{work_with_users.current_user().user_money}
+                <h2>My money: #{work_with_users.current_user().user_money}</h2>
                 <br/>
-
-                <h:commandButton value="Add 100" styleClass="btn btn-default"
+                <h:commandButton value="Add 100" styleClass="btn btn-primary"
                                  action="#{work_with_account.addMoney100()}"/>
-                <h:commandButton value="Add 500" styleClass="btn btn-default"
+                <h:commandButton value="Add 500" styleClass="btn btn-primary"
                                  action="#{work_with_account.addMoney500()}"/>
-                <h:commandButton value="Add 1000" styleClass="btn btn-default"
+                <h:commandButton value="Add 1000" styleClass="btn btn-primary"
                                  action="#{work_with_account.addMoney1000()}"/>
+
+                <h2>My orders:</h2>
 
                 <p:dataTable var="order" value="#{work_with_account.user_order_list}" scrollable="true"
                              scrollHeight="400">
