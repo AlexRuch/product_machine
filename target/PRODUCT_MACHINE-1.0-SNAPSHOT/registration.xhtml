@@ -25,8 +25,8 @@
         <section class="jumbotorn">
             <div class="container">
                 <div class="row text-center">
-                    <h2>COFFEE MACHINE</h2>
-                    <h3>We brew the best coffee</h3>
+                    <h2>PRODUCT&#xA0;MACHINE</h2>
+                    <h3>Best products here!</h3>
                     <a class="btn btn-primary" href="user/index.xhtml">Take it!</a>
                 </div>
             </div>
@@ -39,7 +39,6 @@
                         <br/>
                         <h:inputText value="#{work_with_users.user_email}"
                                      id="userEmail"
-                                     a:placeholder="E-mail"
                                      validatorMessage="Enter your e-mail">
                             <f:validateRegex
                                     pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]"/>
@@ -57,9 +56,9 @@
                         <br/>
                         Confirm password:
                         <br/>
-                        <h:inputText id="confirm" binding="#{confirmPasswordValidator}" required="true">
+                        <h:inputSecret id="confirm" binding="#{confirmPasswordValidator}" required="true">
                             <f:ajax event="blur" execute="password confirm" render="m_password m_confirm"/>
-                        </h:inputText>
+                        </h:inputSecret>
                         <br/>
                         <h:message id="m_confirm" for="confirm"/>
                         <br/>

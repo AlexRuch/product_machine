@@ -31,8 +31,10 @@
         </f:view>
         <h:form>
             <section class="container">
+
+                <h:outputText value="Orders:"/>
                 <p:dataTable var="order" value="#{work_with_admin_panel.all_orders()}" scrollable="true"
-                             scrollHeight="400">
+                             scrollHeight="300">
                     <p:column headerText="Order">
                         <h:outputText value="#{order.id}"/>
                     </p:column>
@@ -52,8 +54,9 @@
             </section>
             <br/>
             <section class="container">
+                <h:outputText value="Product quantity:"/>
                 <p:dataTable var="product" value="#{work_with_products.list_of_products()}" scrollable="true"
-                             scrollHeight="400">
+                             scrollHeight="300">
                     <p:column headerText="Product id">
                         <h:outputText value="#{product.id}"/>
                     </p:column>

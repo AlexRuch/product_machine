@@ -34,9 +34,9 @@ public class Work_with_users {
             users_db.setUser_money(0);
             users_db.setUser_role("user");
             interaction_users_db.createUser(users_db);
-            registration_result_text = "Success! \n Now sign in and <a href = \"user/index.xhtml\">buy<a> something!";
+            registration_result_text = "Success! <br/> Now sign in and <a href = \"user/index.xhtml\">BUY</a> something!";
         } else {
-            registration_result_text = "Registration field. This e-mail already used! \n <a href=\"registration.xhtml>Try again!</a>";
+            registration_result_text = "Registration field. This e-mail already used! <br/> <a href=\"registration.xhtml\">Try again!</a>";
         }
         return "registration_result";
     }

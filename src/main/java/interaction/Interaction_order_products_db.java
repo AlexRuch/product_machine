@@ -52,6 +52,7 @@ public class Interaction_order_products_db {
 
             entityManager.persist(products_db);
             entityManager.persist(ordered_product);
+
             ordered_products_db_list.add(ordered_product);
         }
 
@@ -60,11 +61,10 @@ public class Interaction_order_products_db {
         user_order_db.setOrder_sum(order_sum);
         user_order_db.setAccount_info_db(account_info_db);
 
-
         entityManager.persist(user_order_db);
+
         user_db.getOrder_db_list().add(user_order_db);
         user_db.setUser_money(user_db.getUser_money() - order_sum);
-
 
         entityManager.persist(user_db);
 
@@ -73,8 +73,8 @@ public class Interaction_order_products_db {
         account_info_db.setTransaction_sum(order_sum);
         account_info_db.setOrder(user_order_db);
 
-
         entityManager.persist(account_info_db);
+
         user_db.getAccount().add(account_info_db);
 
 
@@ -89,7 +89,7 @@ public class Interaction_order_products_db {
         boolean current_product_status = true;
         boolean product_status = true;
 
-        money_status = order_sum < interaction_users_db.current_user().getUser_money();
+        money_status = order_sum <= interaction_users_db.current_user().getUser_money();
 
         for (Map.Entry entry : ordered_products_db_map.entrySet()) {
             Products_db products_db = entityManager.find(Products_db.class, entry.getKey());
