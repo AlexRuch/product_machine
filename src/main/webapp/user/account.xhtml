@@ -58,7 +58,7 @@
                         <h:outputText value="#{order.order_date}"/>
                     </p:column>
                     <p:column headerText="Info">
-                        <a href="order_info.xhtml" onclick="#{work_with_account.order_info(order)}">More</a>
+                        <h:commandButton action="#{work_with_account.order_info(order)}" value="More"/>
                     </p:column>
                 </p:dataTable>
 

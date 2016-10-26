@@ -29,8 +29,7 @@
                 </div>
             </nav>
             <section class="container">
-                <h:dataTable value="#{work_with_order.ordered_products}" var="product_in_order"
-                             styleClass="table table-striped" style="text-align: left">
+                <h:dataTable var="product_in_order" value="#{work_with_order.products_in_bag}" styleClass="table table-striped" style="text-align: left">
                     <h:column>
                         <f:facet name="header">Product name</f:facet>
                         #{product_in_order.product_name}
@@ -40,8 +39,8 @@
                         #{product_in_order.product_cost}
                     </h:column>
                     <h:column>
-                        <f:facet name="header">Product price</f:facet>
-                        #{product_in_order.product_cost}
+                        <f:facet name="header">Product quantity</f:facet>
+                        #{product_in_order.product_quantity}
                     </h:column>
                     <h:column>
                         <f:facet name="header">Remove</f:facet>
@@ -49,6 +48,7 @@
                                          action="#{work_with_order.delete_product_in_bag(product_in_order)}"/>
                     </h:column>
                 </h:dataTable>
+                <h:outputText value="#{work_with_order.order_sum}"/>
                 <h:commandButton styleClass="btn  btn-success" value="CONFIRM ORDER"
                                  action="#{work_with_order.confirm_order_in_bag(work_with_order.ordered_products)}"/>
             </section>
