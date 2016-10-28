@@ -20,14 +20,13 @@ public class Products_db {
     private Float product_cost;
 
     @Column
-    private Float product_quantity;
+    private Integer product_quantity;
 
     @OneToMany(mappedBy = "products_db")
     private List<Ordered_products_db> ordered_products_db_list;
 
     @Column
     private String product_image;
-
 
 
     public int getId() {
@@ -50,11 +49,11 @@ public class Products_db {
         this.product_cost = product_cost;
     }
 
-    public Float getProduct_quantity() {
+    public Integer getProduct_quantity() {
         return product_quantity;
     }
 
-    public void setProduct_quantity(Float product_quantity) {
+    public void setProduct_quantity(Integer product_quantity) {
         this.product_quantity = product_quantity;
     }
 

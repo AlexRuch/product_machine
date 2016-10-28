@@ -112,8 +112,8 @@ footer p {
 }
 
 /*.catalog {*/
-    /*position: relative;*/
-    /*left: -60px;*/
+/*position: relative;*/
+/*left: -60px;*/
 /*}*/
 
 #lockerName {
@@ -140,7 +140,7 @@ footer p {
 }
 
 .item:hover {
-    color: rgb(24,24,24);
+    color: rgb(24, 24, 24);
     /*border: 1px solid rgb(198,198,198);*/
     /*background: #f7f7f7 linear-gradient(#f7f7f7, #f1f1f1);*/
     box-shadow: 0 2px 8px rgba(122, 122, 122, 0.5);

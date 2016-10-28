@@ -25,7 +25,7 @@ public class Work_with_products {
         return interaction_products_db.all_products();
     }
 
-    public String add_product(Products_db product){
+    public String add_product(Products_db product) {
         interaction_products_db.add_product(product);
         return "index";
     }

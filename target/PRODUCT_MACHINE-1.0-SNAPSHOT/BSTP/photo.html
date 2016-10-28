@@ -1,0 +1,299 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Фототур</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .gr{
+  background-color: #ecf0f1;
+}
+
+    a { 
+    text-decoration: none; 
+    color:#fff;
+   }
+      a:link { 
+    text-decoration: none; 
+    color:#fff;
+   }
+   a:hover { 
+    text-decoration: none;
+    color:#fff; 
+   }
+   a:visited { 
+    text-decoration: none;
+    color:#fff; 
+   }
+      a:active { 
+    text-decoration: none;
+    color:#fff; 
+   }
+
+ h1{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 30px;
+  }
+  h2{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0px;
+  }
+    h3{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0px;
+    text-align: center;
+  }
+  p {
+    font-family: "Georgia", Serif;
+    font-size: 15px;
+  }
+
+  .container {
+     padding: 10% 15%;
+  }
+    .container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+
+  }
+
+/*ЛОГО*/
+ .navbar-brand {
+ 	padding: 10px;
+ 	height: 70px;
+ }
+
+ .logologo {
+ 	opacity: 0.9;
+ }
+ .logologo:hover{
+ 	opacity: 1;
+ }
+
+ /*НАВИГАЦИЯ*/
+.navbar {
+      margin-bottom: 0;
+      background-color: #fff;
+      border: 0;
+      font-family: "Roboto";
+      font-size: 12px;
+      letter-spacing: 1px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #000;
+  }
+  .navbar-nav li a:hover {
+      color: #000;
+  }
+  .navbar-nav li.active a {
+      color: #2095f2;
+      background-color: #fff;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+
+/*  КАРУСЕЛЬ*/
+  .carousel {
+    margin-top: 6%;
+  }
+  .carousel-inner img {
+      width: 100%; 
+      margin: auto;
+  }
+  .carousel-caption {
+      color: #fff;
+      background-color: rgba(0,0, 0, 0.2);
+      padding-left: 8%;
+      padding-right: 8%;
+      padding-bottom: 4%;
+      left: 0%;
+      right: 0%;
+      text-align: left;
+}
+
+  .carousel-control {
+  	width: 8%;
+  }
+
+  @media (max-width: 1100px) {
+     .carousel {
+      margin-top: 9%;
+    }
+}
+  @media (max-width: 900px) {
+     .carousel {
+      margin-top: 10%;
+    }
+}
+  @media (max-width: 800px) {
+     .carousel {
+      margin-top: 12%;
+    }
+}
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none;
+    }
+     .carousel {
+      margin-top: 14%;
+    }
+}
+  @media (max-width: 500px) {
+     .carousel {
+      margin-top: 18%;
+    }
+}
+  @media (max-width: 400px) {
+     .carousel {
+      margin-top: 21%;
+    }
+}
+
+/*ПОДВАЛ*/
+
+footer {
+    background-color: #7f8c8d;
+    color: #bdc3c7;
+    padding: 20px;
+    bottom: 0;
+  }
+
+footer a {
+    color: #bdc3c7;
+}
+
+footer a:hover {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+  .text-left {
+  	padding: 20px;
+bottom: 0px;
+  }
+    @media (max-width: 900px) {
+    .text-left {
+      position: absolute;
+    }
+}
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+         <img src="img/logo2.gif" class="logologo" alt="Logo" width="160">
+         </a>
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                      
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">ГЛАВНАЯ</a></li>
+        <li><a href="tour.html">ТУРЫ</a></li>
+        <li><a href="photo.html">ФОТОТУР</a></li>
+        <li><a href="about.html">О НАС</a></li>
+        <li><a href="contact.html">КОНТАКТЫ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  
+
+ <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+    <li data-target="#myCarousel" data-slide-to="6"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+
+       <div class="item active">
+     <img src="img/4medbr.jpg" alt="ФОТО МЕДВЕДЯ">
+      <div class="carousel-caption">
+        <p>Текст про медведей, которые не едят людей.</p>
+      </div>
+    </div>
+
+       <div class="item">
+     <img src="img/5medv.jpg" alt="ФОТО МЕДВЕДЯ">
+      <div class="carousel-caption">
+        <p>ЕТекст про медведей, над которыми летают вертолеты.</p>
+      </div>
+    </div>
+
+         <div class="item">
+     <img src="img/6fox.jpg" alt="ФОТО ЛИСЫ">
+      <div class="carousel-caption">
+        <p>Текст про то, как все любят лисяток.</p>
+      </div>
+    </div>
+
+         <div class="item">
+     <img src="img/7zap.jpg" alt="ФОТО ЗАПОВЕДНИКА">
+      <div class="carousel-caption">
+        <p>Немного текста про заповедник, куда никого всё равно не пускают.</p>
+      </div>
+    </div>
+     <div class="item">
+      <img src="img/1.jpg" alt="ФОТО ПУТЕШЕСТВЕННИКА">
+      <div class="carousel-caption">
+        <p>Вдохновенный текст про путешествие.</p>
+      </div>
+    </div>
+  
+    <div class="item">
+     <img src="img/2stars.jpg" alt="ФОТО ЗВЕЗДНОГО НЕБА">
+      <div class="carousel-caption">
+        <p>Мечтательный текст про звёздные ночи.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Назад</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Далее</span>
+  </a>
+</div>
+
+
+
+
+
+    <footer class="text-left">  
+  <h2> Обращаем ваше внимание, что данный сайт носит информационный характер и не является публичной офертой в соответствии с п.2 ст. 437 Гражданского кодекса РФ. </h2>
+  </br>
+  <h3> Сайт создан <a href="#" data-toggle="tooltip" title="Перейти к web-create">www.web-create.com</a></h3> 
+</footer>
+
+
+</body>
+</html>

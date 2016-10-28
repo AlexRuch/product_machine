@@ -1,0 +1,294 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Туры</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+.gr{
+  background-color: #ecf0f1;
+}
+    a { 
+    text-decoration: none; 
+    color:#fff;
+   }
+      a:link { 
+    text-decoration: none; 
+    color:#fff;
+   }
+   a:hover { 
+    text-decoration: none;
+    color:#fff; 
+   }
+   a:visited { 
+    text-decoration: none;
+    color:#fff; 
+   }
+      a:active { 
+    text-decoration: none;
+    color:#fff; 
+   }
+
+    h1{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+  }
+  h2{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0px;
+  }
+      h3{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0px;
+    text-align: center;
+  }
+  p {
+    font-family: "Georgia", Serif;
+    font-size: 15px;
+  }
+
+  .container {
+      padding: 10% 15%;
+  }
+  @media (max-width: 700px) {
+     .container {
+      padding-top: 20%;
+    }
+}
+
+    .container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+
+  }
+
+/*  ЛОГО*/
+
+ .navbar-brand {
+  padding: 10px;
+  height: 70px;
+ }
+
+ .logologo {
+  opacity: 0.9;
+ }
+ .logologo:hover{
+  opacity: 1;
+ }
+
+/*НАВИГАЦИЯ*/
+
+  .navbar {
+      margin-bottom: 0;
+      background-color: #fff;
+      border: 0;
+      font-family: "Roboto";
+      font-size: 12px;
+      letter-spacing: 1px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #000;
+  }
+  .navbar-nav li a:hover {
+      color: #000;
+  }
+  .navbar-nav li.active a {
+      color: #2095f2;
+      background-color: #fff;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+
+/*ДАТЫ*/
+.bg-1 {
+    background: #3498db;
+    color: #bdbdbd
+}
+.bg-1 h1 {color: #fff;}
+.bg-1 p {font-style: italic;
+color: #fff}
+
+.list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.list-group-item:last-child {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+     background-color: #fff;
+}
+
+.thumbnail p {
+    margin-top: 5px;
+    color: #555;
+}
+
+/*КУПИТЬ*/
+
+.btn {
+      padding: 10px 20px;
+      background-color: #3498db;
+      font-family: "Roboto";
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+
+  .btn:hover, .btn:focus {
+      border: 1px solid #3498db;
+      background-color: #fff;
+      color: #3498db;
+  }
+
+/*ПОДВАЛ*/
+
+footer {
+    background-color: #7f8c8d;
+    color: #bdc3c7;
+    padding: 20px;
+}
+
+footer a {
+    color: #bdc3c7;
+}
+
+footer a:hover {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+  .text-left {
+    padding: 20px;
+bottom: 0px;
+  }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+         <img src="img/logo2.gif" class="logologo" alt="Logo" width="160">
+         </a>
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                      
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">ГЛАВНАЯ</a></li>
+        <li><a href="tour.html">ТУРЫ</a></li>
+        <li><a href="photo.html">ФОТОТУР</a></li>
+        <li><a href="about.html">О НАС</a></li>
+        <li><a href="contact.html">КОНТАКТЫ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+ <div class="bg-1">
+  <div class="container">
+    <h1 class="text-center">ДАТЫ ТУРОВ</h1>
+    <p class="text-center">Планируете путешествие на Камчатку?<br> Лучшие предложения KAMBEAR</p>
+    <ul class="list-group">
+      <li class="list-group-item">Июнь <span class="label label-danger">Продано!</span></li>
+      <li class="list-group-item">Июль <span class="badge">4</span></li>
+      <li class="list-group-item">Август <span class="badge">2</span></li>
+    </ul>
+  </div>
+  </div>
+
+<div class="gr">
+<div class="container text-center">
+   <div class="row text-center">
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="img/kamchatka.jpg" alt="Вся Камчатка">
+      <h1>Вся</br>Камчатка</h1>
+      <p>3 июля 2017</p>
+      <button class="btn">Купить тур</button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="img/chudo.jpg" alt="7 чудес Камчатки">
+      <h1>7 чудес</br>Камчатки</h1>
+      <p>8 июля 2017</p>
+      <button class="btn">Купить тур</button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="img/vulkan.jpg" alt="Вулканы и гейзеры">
+      <h1>Вулканы</br>и гейзеры</h1>
+      <p>12 июля 2017</p>
+      <button class="btn">Купить тур</button>
+    </div>
+  </div>
+</div>
+
+   <div class="row text-center">
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="img/ziv.jpg" alt="Вся Камчатка">
+      <h1>Животный мир </br> Камчатки</h1>
+      <p>20 июля 2017</p>
+      <button class="btn">Купить тур</button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="img/riba.jpg" alt="7 чудес Камчатки">
+      <h1>Рыбалка </br> на Камчатке</h1>
+      <p>5 августа 2017</p>
+      <button class="btn">Купить тур</button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="img/kam3d.jpg" alt="Вулканы и гейзеры">
+      <h1>Камчатка </br> за 3 дня</h1>
+      <p>18 августа 2017</p>
+      <button class="btn">Купить тур</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<footer class="text-left">  
+  <h2> Обращаем ваше внимание, что данный сайт носит информационный характер и не является публичной офертой в соответствии с п.2 ст. 437 Гражданского кодекса РФ. </h2>
+  </br>
+  <h3> Сайт создан <a href="#" data-toggle="tooltip" title="Перейти к web-create">www.web-create.com</a></h3> 
+</footer>
+
+
+</body>
+</html>

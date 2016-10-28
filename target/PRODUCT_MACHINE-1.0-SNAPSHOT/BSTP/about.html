@@ -1,0 +1,313 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>О нас</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+    a { 
+    text-decoration: none; 
+    color:#fff;
+   }
+      a:link { 
+    text-decoration: none; 
+    color:#fff;
+   }
+   a:hover { 
+    text-decoration: none;
+    color:#fff; 
+   }
+   a:visited { 
+    text-decoration: none;
+    color:#fff; 
+   }
+      a:active { 
+    text-decoration: none;
+    color:#fff; 
+   }
+
+   h1{
+    font-family: "Roboto", Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    color: #000;
+
+  }
+  h2{
+    font-family: "Roboto" ,Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0px;
+  }
+      h3{
+    font-family: "Roboto",Helvetica, Sans-serif;
+    font-weight: lighter;
+    font-size: 12px;
+    opacity: 0.7;
+    margin: 0px;
+    text-align: center;
+  }
+  p {
+    font-family: "Georgia", Serif;
+    font-size: 15px;
+    color: #000;
+  }
+
+
+  .container {
+      padding: 10% 15%;
+  }
+
+    .container-fluid {
+    padding-right: 30px;
+    padding-left: 30px;
+
+  }
+
+    .col-sm-4{
+    padding-bottom: 30px;
+  }
+
+/*ЛОГО*/
+
+.navbar-brand {
+  padding: 10px;
+  height: 70px;
+ }
+
+ .logologo {
+  opacity: 0.9;
+ }
+ .logologo:hover{
+  opacity: 1;
+ }
+
+/* НАВИГАЦИЯ*/
+
+ .navbar {
+      margin-bottom: 0;
+      background-color: #fff;
+      border: 0;
+      font-family: "Roboto";
+      font-size: 12px;
+      letter-spacing: 1px;
+      opacity: 0.9;
+  }
+  .navbar li a, .navbar .navbar-brand { 
+      color: #000;
+  }
+  .navbar-nav li a:hover {
+      color: #000;
+  }
+  .navbar-nav li.active a {
+      color: #2095f2;
+      background-color: #fff;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+
+/*  КРУГИ*/
+   .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+       opacity: 1;
+  }
+
+/*СЕРОЕ*/
+.bg-grey {
+      background-color: #ecf0f1;
+      width: 100%;
+  }
+  .logo {
+       color: #3498db;
+      font-size: 200px;
+    }
+
+  @media (max-width: 1000px) {
+    .logo {
+      font-size: 170px;
+    }
+}
+
+ 
+ /*ИКОНКИ*/
+.logo-small {
+    color: #3498db;
+    font-size: 50px;
+}
+
+/*ПОДВАЛ*/
+
+footer {
+    background-color: #7f8c8d;
+    color: #bdc3c7;
+    padding: 20px;
+}
+
+footer a {
+    color: #bdc3c7;
+}
+
+footer a:hover {
+    color: #ecf0f1;
+    text-decoration: none;
+}
+  .text-left {
+    padding: 20px;
+bottom: 0px;
+  }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+         <img src="img/logo2.gif" class="logologo" alt="Logo" width="160">
+         </a>
+    <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                      
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">ГЛАВНАЯ</a></li>
+        <li><a href="tour.html">ТУРЫ</a></li>
+        <li><a href="photo.html">ФОТОТУР</a></li>
+        <li><a href="about.html">О НАС</a></li>
+        <li><a href="contact.html">КОНТАКТЫ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+</br>
+ <div class="container text-center">
+  <h1>КОМАНДА KAMBEAR</h1>
+  <p><em>Мы покажем вам Камчатку.</em></p>
+</br>
+
+
+<div class="row">
+
+    <div class="col-sm-4">
+      <h1>Лупкина</br>Анна</h1><br>
+        <a href="#demo2" data-toggle="collapse">
+      <img src="img/manager.jpg"  class="img-circle person" alt="Менеджер KAMBEAR" width="255" height="255">
+        </a>
+         <div id="demo2" class="collapse">
+        <p>Менеджер по турам</p>
+        <p>В KAMBEAR с 2008</p>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h1>Трутнев</br>Сергей</h1><br>
+       <a href="#demo" data-toggle="collapse">
+      <img src="img/dir.jpg"  class="img-circle person" alt="Директор KAMBEAR" width="255" height="255">
+       </a>
+         <div id="demo" class="collapse">
+        <p>Генеральный директор KAMBEAR</p>
+        <p>Основал компанию KAMBEAR в 2005</p>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <h1>Викторов</br>Вячеслав</h1><br>
+        <a href="#demo3" data-toggle="collapse">
+      <img src="img/gid.jpg"  class="img-circle person" alt="Гид KAMBEAR" width="255" height="255">
+       <div id="demo3" class="collapse">
+        </a>
+        <p>Гид по Камчатке</p>
+        <p>В KAMBEAR с 2005</p>
+      </div>
+    </div>
+ </div>
+</div>
+
+<div class="bg-grey">
+ <div class ="container text-center">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo"></span>
+    </div>
+    <div class="col-sm-8">
+      <h1>НАШИ ЦЕННОСТИ</h1>
+      </br>
+      </br>
+      <p><em>Мы хотим показать вам Камчатку - край, который вы никогда не забудете.</em><p>     
+    </div>
+  </div>
+</div>
+</div>
+
+ <div class="container text-center logo-small" >
+  <h1>НАШИ ПРЕИМУЩЕСТВА</h1>
+  </br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-plane logo-small"></span>
+      <h1>ЛОГИСТИКА</h1>
+      <p>Только прямые рейсы</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-user logo-small"></span>
+      <h1>ГИДЫ</h1>
+      <p>На нас работают только опытные гиды</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-home logo-small"></span>
+      <h1>РАЗМЕЩЕНИЕ</h1>
+      <p>Мы сотрудничаем с лучшими отелями</p>
+    </div>
+  </div>
+  </br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-camera logo-small"></span>
+      <h1>ФОТОГРАФ</h1>
+      <p>Мы бесплатно предоставим вам фотографа</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-gift logo-small"></span>
+      <h1>БОНУСЫ</h1>
+      <p>Вас ждут подарки и бонусы от партнеров</p>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-certificate logo-small"></span>
+      <h1>ЛИЦЕНЗИИ</h1>
+      <p>Мы имеем все лицензии и сертификаты</p>
+    </div>
+  </div>
+</div>
+ </div>
+ </br>
+ </br>
+ </br>
+
+
+
+<footer class="text-left">  
+  <h2> Обращаем ваше внимание, что данный сайт носит информационный характер и не является публичной офертой в соответствии с п.2 ст. 437 Гражданского кодекса РФ. </h2>
+  </br>
+  <h3> Сайт создан <a href="#" data-toggle="tooltip" title="Перейти к web-create">www.web-create.com</a></h3> 
+</footer>
+
+
+</body>
+</html>

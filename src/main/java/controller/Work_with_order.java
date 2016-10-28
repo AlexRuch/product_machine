@@ -40,59 +40,58 @@ public class Work_with_order {
 
     public void add_product_in_bag(Products_db product) {
 
-       if (products_in_bag.size() == 0){
-           product.setProduct_quantity((float) 1);
-           products_in_bag.add(product);
-       }
-       else {
-           for (Products_db products_db: products_in_bag){
-               status = 0;
-               if (products_db.getId() == product.getId()){
-                   status = 1;
-                   int index = products_in_bag.indexOf(products_db);
-                   product.setProduct_quantity(products_db.getProduct_quantity() + 1);
-                   products_in_bag.set(index, product);
-               }
-           }
-           if (status == 0){
-                   product.setProduct_quantity((float) 1);
-                   products_in_bag.add(product);
-           }
-       }
+        if (products_in_bag.size() == 0) {
+            product.setProduct_quantity(1);
+            products_in_bag.add(product);
+        } else {
+            for (Products_db products_db : products_in_bag) {
+                status = 0;
+                if (products_db.getId() == product.getId()) {
+                    status = 1;
+                    int index = products_in_bag.indexOf(products_db);
+                    product.setProduct_quantity(products_db.getProduct_quantity() + 1);
+                    products_in_bag.set(index, product);
+                }
+            }
+            if (status == 0) {
+                product.setProduct_quantity(1);
+                products_in_bag.add(product);
+            }
+        }
 
         order_sum = order_sum + product.getProduct_cost();
-        ordered_products.add(product);
     }
 
     public void delete_product_in_bag(Products_db product) {
+        if (product.getProduct_quantity() > 1) {
+            int index = products_in_bag.indexOf(product);
+            product.setProduct_quantity(product.getProduct_quantity() - 1);
+            products_in_bag.set(index, product);
+        } else {
+            products_in_bag.remove(product);
+        }
         order_sum = order_sum - product.getProduct_cost();
-        ordered_products.remove(product);
+//        ordered_products.remove(product);
     }
 
-    public String confirm_order_in_bag(List<Products_db> products_in_bag) {
-        order_sum = 0;
+    public String confirm_order_in_bag(List<Products_db> products_list) {
         map_products.clear();
 
-        for (Products_db product : products_in_bag) {
-            if (map_products.containsKey(product.getId())) {
-                map_products.put(product.getId(), map_products.get(product.getId()) + 1);
-            } else {
-                map_products.put(product.getId(), 1);
-            }
-            order_sum = order_sum + product.getProduct_cost();
+        for (Products_db product : products_list) {
+            map_products.put(product.getId(), product.getProduct_quantity());
         }
 
         if (!map_products.isEmpty()) {
             if (interaction_order_products_db.check_order(map_products, order_sum)) {
                 interaction_order_products_db.confirm_order(map_products, order_sum);
-                ordered_products.clear();
                 products_in_bag.clear();
                 map_products.clear();
-                products_in_bag.clear();
+                this.products_in_bag.clear();
+                this.order_sum = 0;
                 order_result = "Success!";
                 return "order_result.xhtml";
             } else {
-                order_result = "Filed. You do not have enough money or we do not have enough products :)";
+                order_result = "Filed. You do not have enough money or we do not have enough products :) <br/> Go to <a href=\"account.xhtml\">ACCOUNT</a> and add money.";
                 return "order_result.xhtml";
             }
         } else {

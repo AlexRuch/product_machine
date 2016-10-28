@@ -85,8 +85,8 @@ public class Interaction_order_products_db {
     }
 
     public boolean check_order(Map<Integer, Integer> ordered_products_db_map, float order_sum) {
-        boolean money_status = true;
-        boolean current_product_status = true;
+        boolean money_status;
+        boolean current_product_status;
         boolean product_status = true;
 
         money_status = order_sum <= interaction_users_db.current_user().getUser_money();

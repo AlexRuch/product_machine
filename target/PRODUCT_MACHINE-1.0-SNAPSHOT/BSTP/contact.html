@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Контакты</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:active {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        h1 {
+            font-family: "Roboto", Helvetica, Sans-serif;
+            font-weight: lighter;
+            font-size: 30px;
+        }
+
+        h2 {
+            font-family: "Roboto", Helvetica, Sans-serif;
+            font-weight: lighter;
+            font-size: 12px;
+            opacity: 0.7;
+            margin: 0px;
+        }
+
+        h3 {
+            font-family: "Roboto", Helvetica, Sans-serif;
+            font-weight: lighter;
+            font-size: 12px;
+            opacity: 0.7;
+            margin: 0px;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Georgia", Serif;
+            font-size: 15px;
+        }
+
+        .container {
+            padding: 10% 15%;
+        }
+
+        .container-fluid {
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+
+        /*ЛОГО*/
+
+        .navbar-brand {
+            padding: 10px;
+            height: 70px;
+        }
+
+        .logologo {
+            opacity: 0.9;
+        }
+
+        .logologo:hover {
+            opacity: 1;
+        }
+
+        /* НАВИГАЦИЯ*/
+
+        .navbar-brand {
+            padding: 10px;
+            height: 70px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            background-color: #fff;
+            border: 0;
+            font-family: "Roboto";
+            font-size: 12px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+
+        .navbar li a, .navbar .navbar-brand {
+            color: #000;
+        }
+
+        .navbar-nav li a:hover {
+            color: #000;
+        }
+
+        .navbar-nav li.active a {
+            color: #000;
+            background-color: #fff;
+        }
+
+        .navbar-default .navbar-toggle {
+            color: #000;
+            border-color: transparent;
+        }
+
+        /* КАРТА*/
+
+        #googleMap {
+            width: 100%;
+            height: 600px;
+        }
+
+        @media (max-width: 600px) {
+            #googleMap {
+                height: 450px;
+            }
+        }
+
+        /*ОТПРАВИТЬ*/
+        .btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            font-family: "Roboto";
+            color: #f1f1f1;
+            border-radius: 0;
+            transition: .2s;
+        }
+
+        .btn:hover, .btn:focus {
+            border: 1px solid #3498db;
+            background-color: #fff;
+            color: #3498db;
+        }
+
+        /*  ПОДВАЛ*/
+
+        footer {
+            background-color: #7f8c8d;
+            color: #bdc3c7;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #bdc3c7;
+        }
+
+        footer a:hover {
+            color: #ecf0f1;
+            text-decoration: none;
+        }
+
+        .text-left {
+            padding: 20px;
+            bottom: 0px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="img/logo2.gif" class="logologo" alt="Logo" width="160">
+        </a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">ГЛАВНАЯ</a></li>
+                <li><a href="tour.html">ТУРЫ</a></li>
+                <li><a href="photo.html">ФОТОТУР</a></li>
+                <li><a href="about.html">О НАС</a></li>
+                <li><a href="contact.html">КОНТАКТЫ</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div id="googleMap"></div>
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script>
+    var myCenter = new google.maps.LatLng(59.935434, 30.334243);
+
+    function initialize() {
+        var mapProp = {
+            center: myCenter,
+            zoom: 16,
+            scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+        var marker = new google.maps.Marker({
+            position: myCenter
+        });
+
+        marker.setMap(map);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+<div id="contact" class="container">
+    <h1 class="text-center">НАПИШИТЕ НАМ!</h1>
+    <p class="text-center"><em>Мы ответим на любые вопросы.</em></p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <p><span class="glyphicon glyphicon-map-marker"></span> Санкт-Петербург</p>
+            <p><span class="glyphicon glyphicon-phone"></span> Телефон: 8 800 333-33-33</p>
+            <p><span class="glyphicon glyphicon-envelope"></span> Email: mail@mail.ru</p>
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="name" name="name" placeholder="Имя" type="text" required>
+                </div>
+                <div class="col-sm-6 form-group">
+                    <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+                </div>
+            </div>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Сообщение" rows="12"></textarea>
+            <br>
+            <div class="row">
+                <div class="col-md-12 form-group">
+                    <button class="btn pull-right" type="submit">Отправить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer class="text-left">
+    <h2> Обращаем ваше внимание, что данный сайт носит информационный характер и не является публичной офертой в
+        соответствии с п.2 ст. 437 Гражданского кодекса РФ. </h2>
+    </br>
+    <h3> Сайт создан <a href="#" data-toggle="tooltip" title="Перейти к web-create">www.web-create.com</a></h3>
+</footer>
+
+
+</body>
+</html>

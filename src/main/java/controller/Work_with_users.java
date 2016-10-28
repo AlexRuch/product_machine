@@ -41,7 +41,7 @@ public class Work_with_users {
         return "registration_result";
     }
 
-    public Users_db current_user(){
+    public Users_db current_user() {
         return interaction_users_db.current_user();
     }
     /*

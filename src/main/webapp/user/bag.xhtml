@@ -14,7 +14,7 @@
 <h:body>
     <h:form>
         <f:view>
-            <nav class="navbar navbar-inverse" style="margin-bottom: 0">
+            <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0">
                 <div class="container-fluid">
                     <div class="navbar-header">
                         <a class="navbar-brand" href="index.xhtml">Product Machine</a>
@@ -29,7 +29,8 @@
                 </div>
             </nav>
             <section class="container">
-                <h:dataTable var="product_in_order" value="#{work_with_order.products_in_bag}" styleClass="table table-striped" style="text-align: left">
+                <h:dataTable var="product_in_order" value="#{work_with_order.products_in_bag}"
+                             styleClass="table table-striped" style="text-align: left">
                     <h:column>
                         <f:facet name="header">Product name</f:facet>
                         #{product_in_order.product_name}
@@ -48,9 +49,12 @@
                                          action="#{work_with_order.delete_product_in_bag(product_in_order)}"/>
                     </h:column>
                 </h:dataTable>
-                <h:outputText value="#{work_with_order.order_sum}"/>
                 <h:commandButton styleClass="btn  btn-success" value="CONFIRM ORDER"
-                                 action="#{work_with_order.confirm_order_in_bag(work_with_order.ordered_products)}"/>
+                                 action="#{work_with_order.confirm_order_in_bag(work_with_order.products_in_bag)}"/>
+                <br/>
+                <h2>Order cost: <h:outputText value="#{work_with_order.order_sum}"/></h2>
+                <br/>
+                <h2>My money: #{work_with_users.current_user().user_money}</h2>
             </section>
         </f:view>
         <footer style="height: 100px;

@@ -13,7 +13,7 @@
 </head>
 <h:body>
     <f:view>
-        <nav class="navbar navbar-inverse" style="margin-bottom: 0">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom: 0">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="index.xhtml">Product Machine</a>
@@ -34,7 +34,8 @@
         </section>
         <section class="container">
             <h:form>
-                <h2>#{work_with_order.order_result}</h2> <a href="bag.xhtml">Go to bag.</a> <a href="index.xhtml">Go homepage</a>
+                <h2><h:outputLabel value="#{work_with_order.order_result}" escape="false"/></h2> <a
+                    href="bag.xhtml">Go to bag.</a> <a href="index.xhtml">Go homepage</a>
             </h:form>
         </section>
 
