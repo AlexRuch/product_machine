@@ -1,3 +1,8 @@
+Панель администратора: product.reg25.org/admin
+login: admin@mail.ru
+pass: qwerty
+
+
 # Software Requirements Specification
 
 ## Введение (Introduction)
